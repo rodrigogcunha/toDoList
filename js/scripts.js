@@ -6,7 +6,7 @@ const editForm = document.querySelector("#edit-form");
 const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-btn");
 
-let oldIpuntValue;
+let oldIpuntValue = "";
 
 // Funções
 const saveTodo = (text) => {
@@ -74,6 +74,9 @@ document.addEventListener("click", (e) => {
 
   if (targetEl.classList.contains("edit-todo")) {
     toggleForms();
+
+    editInput.value = todoTitle
+    oldIpuntValue.value = todoTitle
   }
 });
 
@@ -82,3 +85,17 @@ cancelEditBtn.addEventListener("click", (e) => {
 
   toggleForms();
 });
+
+editForm.addEventListener("subimit", (e) => {
+
+    e.preventDefault()
+
+    const editInputValue = editInput.value
+
+    if (editInputValue) {
+
+    }
+
+    toggleForms()
+
+})
